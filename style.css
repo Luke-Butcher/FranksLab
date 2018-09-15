@@ -1,0 +1,218 @@
+body{
+    background:black;
+}
+#centerWrap {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#outer-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: thick double #47b3c7;
+    height: 300px;
+    width: 300px;
+    margin: 100px 0 0 100px;
+
+    /*
+     Child elements with absolute positioning will be
+     positioned relative to this div
+    */
+}
+#inner-circle1 {
+    position: absolute;
+    border: dashed #ab0010;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0px 0px -100px;
+}
+
+#inner-circle2 {
+    position: absolute;
+    border-bottom: thin solid #47b3c7;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0px 0px -50px;
+    box-shadow: 19px -20px 0px 25px black;
+    animation: spin 20s linear infinite;
+
+}
+
+#ball {
+    position: absolute;
+    background: #ab0010;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 10px #ab0010;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0px 0px -25px;
+    opacity: 1;
+    animation: blinker 20s linear infinite;
+}
+.selectionElement{
+    z-index: 999999;
+    cursor: pointer;
+    position: absolute;
+    border: thin ridge #47b3c7;
+    border-radius: 25px;
+    height: 75px;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    background-image: linear-gradient(#47b3c763, #47b3c763);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    transition:all 0.5s;
+}
+#selectionElement1 {
+    margin: -200px 0 0 200px;
+}
+#selectionElement2 {
+    margin: -100px 0 0 200px;
+}
+#selectionElement3 {
+    margin: 0 0 0 200px;
+}
+#selectionElement4 {
+    margin: 100px 0 0 200px;
+}
+#selectionElement5 {
+    margin: -200px 0 0 -400px;
+}
+#selectionElement6 {
+    margin: -100px 0 0 -400px;
+}
+#selectionElement7 {
+    margin: 0 0 0 -400px;
+}
+#selectionElement8 {
+    margin: 100px 0 0 -400px;
+}
+#selectionElement1:hover {
+
+}
+#selectionElement2:hover {
+}
+#selectionElement3:hover {
+}
+#selectionElement4:hover {
+}
+#selectionElement5:hover {
+}
+#selectionElement6:hover {
+}
+#selectionElement7:hover {
+}
+#selectionElement8:hover {
+}
+
+.selectionElement:hover {
+    border-width: thick;
+    border-color: goldenrod;
+    background-size: 100% 100%;
+
+}
+.selectionElement:hover ~ #line1a {
+    opacity: 0;
+
+}
+
+
+@keyframes blinker {
+    50% {
+        opacity: 0.2;
+        box-shadow: 0 0 0px 0px #ab0010;
+    }
+}
+
+@keyframes spin {
+    0% {
+             transform: rotate(0deg);
+
+         }
+    100% {
+        transform: rotate(360deg);
+
+    }
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.line{
+    stroke-linecap: butt;
+    stroke:#47b3c7;
+    opacity: .5;
+}
+
+.selectionElement>.title{
+    font-family: 'Nova Square', cursive;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    text-shadow: -3px 2px black;
+}
+.subtitle{
+    visibility: hidden;
+}
+.selectionElement:hover>.subtitle{
+    visibility: visible;
+    font-family: 'Nova Square', cursive;
+    font-style: italic;
+    font-size: xx-small;
+    cursor: pointer;
+    color: #47b3c7;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    transition-delay: 0.25s;
+
+}
+
+ .noScroll{
+ ::-webkit-scrollbar
+ display: none;
+ }
+.glitch {
+    font-family: 'Nova Square', cursive;
+    font-size: 100px;
+    font-weight: bolder;
+    color: #47b3c7;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0;
+    text-shadow: -8px 8px #ab0010;
+    line-height: 1;
+    position: absolute;
+    margin: 20%;
+    text-decoration: none;
+    animation: noise 2s linear infinite;
+}
+
+@keyframes noise {
+    0%, 2% {opacity: 1; transform: scaleY(1);}
+    0%, 2% {opacity: 1; transform: scaleX(1);}
+    1% {opacity: 0; transform: scaleX(10) skew(60deg);}
+    /*7% {opacity: 0.5; transform: scaleX(10) skew(60deg);}*/
+}
